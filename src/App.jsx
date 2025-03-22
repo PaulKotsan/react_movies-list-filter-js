@@ -5,7 +5,7 @@ import { MoviesList } from './components/MoviesList';
 import moviesFromServer from './api/movies.json';
 
 function preparedMovies(movies, query) {
-  let resultMovies = [...movies];
+  let resultMovies = movies;
 
   // NOTE: remove trim() for movie.title and movie.description if needed.
   if (query) {
@@ -43,7 +43,7 @@ export const App = () => {
                 className="input"
                 placeholder="Type search word"
                 onChange={event => {
-                  setQuery(event.currentTarget.value);
+                  setQuery(event.target.value);
                 }}
               />
             </div>
